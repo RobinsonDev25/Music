@@ -1,31 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      MusicApp
-    </ion-title>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">MusicApp</ion-title>
+      <ion-title size="large">Register</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
     <div class="form-container">
       <form class="form">
-        <h1>Log in</h1>
+        <h1>Register</h1>
+        <input type="email" class="input" placeholder="User" #user>
         <input type="email" class="input" placeholder="Email" #email>
         <input type="password" class="input" placeholder="Password" #password>
-        <button class="form-btn" (click)="login(email, password)">
-          Log in
-        </button>
-        <button class="form-btn" routerLink="/register">
-          Registrarse
-        </button>
+        <button class="form-btn" (click)="register(user, email, password)">Log in</button>
       </form>
     </div>
-    </div> 
+  </div> 
+
 </ion-content>
