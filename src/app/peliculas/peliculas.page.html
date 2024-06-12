@@ -10,4 +10,15 @@
       <ion-title size="large">peliculas</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-searchbar #nombre (keyup.enter)="searchMovies(nombre)" placeholder="Search"></ion-searchbar>
+
+  <ion-card *ngFor="let item of movies">
+    <img alt="Silhouette of mountains" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}"/>
+    <ion-card-header>
+      <ion-card-title>{{item.original_title}}</ion-card-title>
+      <ion-card-subtitle>{{item.release_date}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  
 </ion-content>

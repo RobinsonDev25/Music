@@ -1,6 +1,8 @@
 import { UserService } from './../servicios/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PeliculasService } from '../servicios/peliculas.service';
+
 
 @Component({
   selector: 'app-principal',
@@ -10,9 +12,11 @@ import { Router } from '@angular/router';
 export class PrincipalPage implements OnInit {
 
   datos:any;
+  movies:any;
 
   constructor(private router:Router,
-    private userService:UserService) { }
+    private userService:UserService,
+    private peliculasService:PeliculasService) { }
 
   ngOnInit() {
     this.getUsers();
@@ -40,6 +44,16 @@ export class PrincipalPage implements OnInit {
        debugger
       },
       error:(error:any)=>{
+        debugger
+      }
+    })
+  }
+
+  getMovies(){
+    this.peliculasService.getMovie().subscribe({
+      next : (data:any)=>{
+        this.movies = data.results;
+      },error:(error:any)=>{
         debugger
       }
     })
