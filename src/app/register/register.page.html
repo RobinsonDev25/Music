@@ -18,7 +18,14 @@
         <input type="email" class="input" placeholder="User" #user>
         <input type="email" class="input" placeholder="Email" #email>
         <input type="password" class="input" placeholder="Password" #password>
-        <button class="form-btn" (click)="register(user, email, password)">Log in</button>
+        <button class="form-btn" (click)="register(user, email, password)">
+          <ion-icon name="person-outline"></ion-icon>
+          Log in
+        </button>
+        <button class="form-btn" routerLink="/home">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Cancelar
+        </button>
       </form>
     </div>
   </div> 
